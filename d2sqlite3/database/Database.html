@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Struct Database</title>
+		<link rel="stylesheet" type="text/css" href="../../styles/ddox.css"/>
+		<link rel="stylesheet" href="../../prettify/prettify.css" type="text/css"/>
+		<script type="text/javascript" src="../../scripts/jquery.js">/**/</script><script type="text/javascript" src="../../scripts/ddox.js">/**/</script>
+	</head>
+	<body onload="setupDdox();">
+		<nav id="main-nav">
+			<noscript>
+				<p style="color: red">The search functionality needs JavaScript enabled</p>
+			</noscript>
+			<div id="symbolSearchPane" style="display: none">
+				<form action="#" method="GET">
+					<input id="symbolSearch" type="text" name="q" placeholder="Search for symbols" autocomplete="off" onchange="performSymbolSearch(40);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>
+				</form>
+				<ul id="symbolSearchResults" class="symbolList" style="display: none"></ul><script type="application/javascript" src="../../symbols.js"></script><script type="application/javascript">var symbolSearchRootDir = "../../";
+$('#symbolSearchPane').show();</script>
+			</div>
+			<ul class="tree-view">
+				<li class="tree-view ">
+					<div class="package ">
+						<a href="../../d2sqlite3.html">d2sqlite3</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module selected">
+						<a href="../../d2sqlite3/database.html">database</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../d2sqlite3/results.html">results</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../d2sqlite3/statement.html">statement</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+		</nav>
+		<div id="main-contents">
+			<h1>Struct Database</h1><p>An database connection.
+</p>
+			<div class="prototype">
+				<code class="lang-d">
+					<div class="single-prototype">
+			<span class="kwd">struct</span> <span class="typ">Database</span>
+			<span class="pun">;</span>
+					</div>
+				</code>
+			</div>
+			<section><p>This struct is a reference-counted wrapper around a <code class="lang-d"><span class="pln">sqlite3</span><span class="pun">*</span></code> pointer.
+</p>
+</section>
+
+			<section><h2>Constructors</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.this.html" class="[&quot;public&quot;]">
+								<code>this</code>
+							</a>
+						</td>
+						<td>Opens a database connection.
+</td>
+					</tr>
+				</table>
+			</section>
+			<section><h2>Properties</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Type</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.changes.html" class="[&quot;public&quot;, &quot;property&quot;]"><code>changes</code></a><span class="tableEntryAnnotation">[get]</span>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><span class="typ">int</span></code></td><td>Gets the number of database rows that were changed, inserted or deleted by the most
+    recently executed SQL statement.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.errorCode.html" class="[&quot;public&quot;, &quot;property&quot;]"><code>errorCode</code></a><span class="tableEntryAnnotation">[get]</span>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><span class="typ">int</span></code></td><td>Gets the SQLite error code of the last operation.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.handle.html" class="[&quot;public&quot;, &quot;property&quot;]"><code>handle</code></a><span class="tableEntryAnnotation">[get]</span>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><span class="pln">d2sqlite3<wbr/></span><span class="pun">.</span><span class="pln">sqlite3<wbr/></span><span class="pun">.</span><span class="pln">sqlite3</span><span class="pun">*</span></code></td><td>Gets the SQLite internal handle of the database connection.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.totalChanges.html" class="[&quot;public&quot;, &quot;property&quot;]"><code>totalChanges</code></a><span class="tableEntryAnnotation">[get]</span>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><span class="typ">int</span></code></td><td>Gets the number of database rows that were changed, inserted or deleted since the
+    database was opened.
+</td>
+					</tr>
+				</table>
+			</section>
+			<section><h2>Methods</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.attachedFilePath.html" class="[&quot;public&quot;]">
+								<code>attachedFilePath</code>
+							</a>
+						</td>
+						<td>Gets the path associated with an attached database.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.begin.html" class="[&quot;public&quot;]">
+								<code>begin</code>
+							</a>
+						</td>
+						<td>Convenience functions equivalent to an SQL statement.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.close.html" class="[&quot;public&quot;]">
+								<code>close</code>
+							</a>
+						</td>
+						<td>Explicitly closes the database connection.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.commit.html" class="[&quot;public&quot;]">
+								<code>commit</code>
+							</a>
+						</td>
+						<td>Convenience functions equivalent to an SQL statement.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.config.html" class="[&quot;public&quot;]">
+								<code>config</code>
+							</a>
+						</td>
+						<td>Sets a connection configuration option.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.createAggregate.html" class="[&quot;public&quot;]">
+								<code>createAggregate</code>
+							</a>
+						</td>
+						<td>Creates and registers a new aggregate function in the database.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.createCollation.html" class="[&quot;public&quot;]">
+								<code>createCollation</code>
+							</a>
+						</td>
+						<td>Creates and registers a collation function in the database.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.createFunction.html" class="[&quot;public&quot;]">
+								<code>createFunction</code>
+							</a>
+						</td>
+						<td>Creates and registers a new function in the database.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.enableLoadExtensions.html" class="[&quot;public&quot;]">
+								<code>enableLoadExtensions</code>
+							</a>
+						</td>
+						<td>Enables or disables loading extensions.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.execute.html" class="[&quot;public&quot;]">
+								<code>execute</code>
+							</a>
+						</td>
+						<td>Executes a single SQL statement and returns the results directly.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.interrupt.html" class="[&quot;public&quot;]">
+								<code>interrupt</code>
+							</a>
+						</td>
+						<td>Interrupts any pending database operations.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.isReadOnly.html" class="[&quot;public&quot;]">
+								<code>isReadOnly</code>
+							</a>
+						</td>
+						<td>Gets the read-only status of an attached database.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.lastInsertRowid.html" class="[&quot;public&quot;]">
+								<code>lastInsertRowid</code>
+							</a>
+						</td>
+						<td>Returns the rowid of the last INSERT statement.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.loadExtension.html" class="[&quot;public&quot;]">
+								<code>loadExtension</code>
+							</a>
+						</td>
+						<td>Loads an extension.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.prepare.html" class="[&quot;public&quot;]">
+								<code>prepare</code>
+							</a>
+						</td>
+						<td>Prepares (compiles) a single SQL statement and returngs it, so that it can be bound to
+    values before execution.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.rollback.html" class="[&quot;public&quot;]">
+								<code>rollback</code>
+							</a>
+						</td>
+						<td>Convenience functions equivalent to an SQL statement.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.run.html" class="[&quot;public&quot;]">
+								<code>run</code>
+							</a>
+						</td>
+						<td>Runs an SQL script that can contain multiple statements.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setCommitHook.html" class="[&quot;public&quot;]">
+								<code>setCommitHook</code>
+							</a>
+						</td>
+						<td>Registers a delegate of type <code class="lang-d"><a href="../../d2sqlite3/database/CommitHookDelegate.html"><span class="typ"><a href="../../d2sqlite3/database/CommitHookDelegate.html"><span class="typ">CommitHookDelegate</span></a></span></a></code> as the database's commit hook.
+    Any previously set hook is released.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setProfileCallback.html" class="[&quot;public&quot;]">
+								<code>setProfileCallback</code>
+							</a>
+						</td>
+						<td>Registers a delegate of type <code class="lang-d"><a href="../../d2sqlite3/database/ProfileCallbackDelegate.html"><span class="typ"><a href="../../d2sqlite3/database/ProfileCallbackDelegate.html"><span class="typ">ProfileCallbackDelegate</span></a></span></a></code> as the profile callback.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setProgressHandler.html" class="[&quot;public&quot;]">
+								<code>setProgressHandler</code>
+							</a>
+						</td>
+						<td>Registers a delegate of type <code class="lang-d"><a href="../../d2sqlite3/database/ProgressHandlerDelegate.html"><span class="typ">ProgressHandlerDelegate</span></a></code> as the progress handler.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setRollbackHook.html" class="[&quot;public&quot;]">
+								<code>setRollbackHook</code>
+							</a>
+						</td>
+						<td>Registers a delegate of type <code class="lang-d"><a href="../../d2sqlite3/database/RoolbackHookDelegate.html"><span class="typ"><a href="../../d2sqlite3/database/RoolbackHookDelegate.html"><span class="typ">RoolbackHookDelegate</span></a></span></a></code> as the database's rollback hook.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setTraceCallback.html" class="[&quot;public&quot;]">
+								<code>setTraceCallback</code>
+							</a>
+						</td>
+						<td>Registers a delegate of type <code class="lang-d"><a href="../../d2sqlite3/database/TraceCallbackDelegate.html"><span class="typ">TraceCallbackDelegate</span></a></code> as the trace callback.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setUnlockNotifyHandler.html" class="[&quot;public&quot;]">
+								<code>setUnlockNotifyHandler</code>
+							</a>
+						</td>
+						<td>Registers a <code class="lang-d"><a href="../../d2sqlite3/database/IUnlockNotifyHandler.html"><span class="typ"><a href="../../d2sqlite3/database/IUnlockNotifyHandler.html"><span class="typ">IUnlockNotifyHandler</span></a></span></a></code> used to handle database locks.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.setUpdateHook.html" class="[&quot;public&quot;]">
+								<code>setUpdateHook</code>
+							</a>
+						</td>
+						<td>Registers a delegate of type <code class="lang-d"><a href="../../d2sqlite3/database/UpdateHookDelegate.html"><span class="typ"><a href="../../d2sqlite3/database/UpdateHookDelegate.html"><span class="typ">UpdateHookDelegate</span></a></span></a></code> as the database's update hook.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../d2sqlite3/database/Database.tableColumnMetadata.html" class="[&quot;public&quot;]">
+								<code>tableColumnMetadata</code>
+							</a>
+						</td>
+						<td>Gets metadata for a specific table column of an attached database.
+</td>
+					</tr>
+				</table>
+			</section>
+			
+			<footer>
+				<table class="license-info">
+					<tr>
+						<th>Authors</th>
+						<td>
+							<p>Nicolas Sicard (biozic) and other contributors at <a href="https://github.com/biozic/d2sqlite3">https://github.com/biozic/d2sqlite3</a>
+</p>
+
+						</td>
+					</tr>
+					<tr>
+						<th>Copyright</th>
+						<td>
+							<p>Copyright 2011-17 Nicolas Sicard.
+</p>
+
+						</td>
+					</tr>
+					<tr>
+						<th>License</th>
+						<td>
+							<p><a href="http://www.boost.org/LICENSE_1_0.txt">Boost License 1.0</a>.
+</p>
+
+						</td>
+					</tr>
+				</table>
+				<p class="faint">Generated using the DDOX documentation generator</p>
+			</footer>
+		</div>
+	</body>
+</html>
